@@ -1,4 +1,7 @@
 import './App.css';
+import React from 'react';
+import 'font-awesome/css/font-awesome.min.css';
+
 
 const audio = document.getElementById('beep');
 
@@ -166,4 +169,4 @@ const SetTimer = (props) => {
   );
 }
 
-ReactDOM.render(<App />, document.getElementById('app'));
+export default App

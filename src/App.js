@@ -1,9 +1,11 @@
 import './App.css';
 import React from 'react';
 import 'font-awesome/css/font-awesome.min.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faPlus, faMinus, faSync, faPause, faPlay } from '@fortawesome/free-solid-svg-icons'
 
-
-const audio = document.getElementById('beep');
+library.add(faPlus, faMinus, faSync, faPause, faPlay);
 
 class App extends React.Component {
     state = {
@@ -139,10 +141,10 @@ class App extends React.Component {
          <audio id="beep" src="https://www.pacdv.com/sounds/interface_sound_effects/sound10.mp3" type="audio/mp3" />
          <div className="flex">
           <button id="start_stop" onClick={this.handlePlayPause}>
-            <i className={`fas fa-${isPlaying ? 'pause' : 'play'}`} />
+            <FontAwesomeIcon icon={`${isPlaying ? 'pause' : 'play'}`} />
           </button>
           <button id="reset" onClick={this.handleReset}>
-            <i className="fas fa-sync" />
+            <FontAwesomeIcon icon="sync" />         
           </button>         
          </div>
        </div>
@@ -158,11 +160,11 @@ const SetTimer = (props) => {
       <h2 id={`${id}-label`}>{props.title} Length</h2>
       <div className="flex actions-wrapper">
         <button id={`${id}-decrement`} onClick={props.handleDecrease}>
-          <i className="fas fa-minus" />
+        <FontAwesomeIcon icon="minus" />        
         </button>
         <span id={`${id}-length`}>{props.count}</span>
         <button id={`${id}-increment`} onClick={props.handleIncrease}>
-          <i className="fas fa-plus" />
+          <FontAwesomeIcon icon="plus" />        
         </button>
       </div>
     </div>

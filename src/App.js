@@ -131,6 +131,9 @@ class App extends React.Component {
     
     return  (
       <div>
+        <div className="title">
+          <h1>Pomodoro Clock</h1>
+        </div> <br /> <br />
        <div className="flex">
         <SetTimer  {...breakProps} />
         <SetTimer {...sessionProps} />
